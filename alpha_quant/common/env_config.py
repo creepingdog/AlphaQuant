@@ -84,7 +84,7 @@ class EnvConfig:
         return self._get(key=prop.value, default_val=default_val)
     #
 
-    def get_credentials(self, credential_prop):
+    def get_credential(self, credential_prop):
         user = self._get(f'{credential_prop.value}.user')
         password = self._get(f'{credential_prop.value}.password')
         return (user, password)
