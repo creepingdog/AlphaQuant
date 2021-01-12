@@ -12,6 +12,8 @@ class Prop(enum.Enum):
     IB_TWS_HOST = 'ib_tws.host'
     IB_TWS_PORT = 'ib_tws.port'
     IB_TWS_CLIENT_ID = 'ib_tws.client_id'
+
+    AV_API_KEY = 'av.api_key'
 #
 
 

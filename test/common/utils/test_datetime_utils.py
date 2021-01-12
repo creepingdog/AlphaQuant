@@ -1,12 +1,11 @@
 import alpha_quant.common.unittest as ut
-import alpha_quant.common.env_config as ecfg
 import alpha_quant.common.utils.datetime_utils as dtu
 import pandas as pd
 from datetime import datetime
 import pytz
 
 
-class TestDBUtils(ut.TestCase):
+class TestDateTimeUtils(ut.TestCase):
     def test_datetime_to_did(self):
         self.assertEqual(dtu.datetime_to_did(datetime(2020, 11, 25)), 20201125)
         adt = datetime(2020, 8, 7, 2, 0, 0, tzinfo=pytz.UTC)
@@ -59,6 +58,7 @@ class TestDBUtils(ut.TestCase):
         self.assertEqual(target.strftime('%Y%m%d-%H%M%d'), benchmark.strftime('%Y%m%d-%H%M%d'))
     #
 #
+
 
 if __name__ == '__main__':
     ut.main()

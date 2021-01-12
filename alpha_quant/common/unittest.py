@@ -18,10 +18,15 @@ class TestCase(unittest.TestCase):
         self.addTypeEqualityFunc(pd.Index, index_equals)
     #
 
-    def load_benchmark_dataframe(self, basename):
+    def get_benchmark_file(self, basename):
         frame = inspect.stack()[1]
         caller_file = os.path.realpath(frame[0].f_code.co_filename)
         benchmark_file = os.path.join(os.path.dirname(caller_file), 'benchmark', basename)
+        return benchmark_file
+    #
+
+    def load_benchmark_dataframe(self, basename):
+        benchmark_file = self.get_benchmark_file(basename=basename)
         benchmark = pd.read_csv(benchmark_file, sep=',')
         return benchmark
     #
